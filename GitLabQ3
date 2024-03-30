@@ -1,0 +1,24 @@
+Create a GitHub Repository:
+
+Log in to GitHub.
+Click the "+" button, choose "New repository".
+Give it a name, description, and choose if it's public or private.
+Click "Create repository".
+Clone the Repository:
+
+After creating, copy its web address.
+Open your terminal or command prompt.
+Use a command to copy the repository to your computer.
+Make Changes:
+
+Find the folder on your computer where the repository was copied.
+Change the files using a writing tool.
+Stage the Changes:
+
+Prepare the changes you made to be saved.
+Commit the Changes:
+
+Save the changes with a short description.
+Push Changes to the Remote Repository:
+
+Send your saved changes back to GitHub.
