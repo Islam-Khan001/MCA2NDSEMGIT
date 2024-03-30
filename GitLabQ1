@@ -1,0 +1,95 @@
+A software project requires multiple developers to work on different features simultaneously. Developer A is tasked with implementing a new user SignUp, while Developer B is working on Creating Login Page.
+
+1 Set Up the Project Repository.
+2 Create Feature Branches.
+3 Work on Respective Features.
+4 Merge Changes to Main Branch.
+5 Resolve Merge Conflicts.
+6 Push Changes to Remote Repository.
+7 Delete Feature Branches if you want.
+
+After merging a feature branch into the main branch and ensuring that it's no longer needed, developers can delete the features branch to keep the repository clean and organized.
+
+Following the all the commands that Demonstrates Branching and Merging:
+
+PS C:\study\githubclass\gitclass> git init MyProject
+Initialized empty Git repository in C:/study/githubclass/gitclass/MyProject/.git/
+PS C:\study\githubclass\gitclass> cd myproject 
+PS C:\study\githubclass\gitclass\MyProject> git remote add origin https://github.com/Islam-Khan001/GitLab.git
+PS C:\study\githubclass\gitclass\MyProject> git add .
+PS C:\study\githubclass\gitclass\MyProject> git commit -m "Committed MyFile to Main Branch" 
+[main (root-commit) 52053a6] Committed MyFile to Main Branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 MyFile.java
+PS C:\study\githubclass\gitclass\MyProject> git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 309 bytes | 154.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Islam-Khan001/GitLab.git
+ * [new branch]      main -> main
+PS C:\study\githubclass\gitclass\MyProject> git checkout -b Branch-LoginPage
+Switched to a new branch 'Branch-LoginPage'
+PS C:\study\githubclass\gitclass\MyProject> git add .
+PS C:\study\githubclass\gitclass\MyProject> git commit -m "Committed MyFile to Branch-LoginPage Branch" 
+[Branch-LoginPage 6aa64d4] Committed MyFile to Branch-LoginPage Branch
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\study\githubclass\gitclass\MyProject> git push origin Branch-LoginPage
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 434 bytes | 434.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'Branch-LoginPage' on GitHub by visiting:      
+remote:      https://github.com/Islam-Khan001/GitLab/pull/new/Branch-LoginPage   
+remote: 
+To https://github.com/Islam-Khan001/GitLab.git
+ * [new branch]      Branch-LoginPage -> Branch-LoginPage
+PS C:\study\githubclass\gitclass\MyProject> git checkout -b Branch-SignUpPage    
+Switched to a new branch 'Branch-SignUpPage'
+PS C:\study\githubclass\gitclass\MyProject> git add .
+PS C:\study\githubclass\gitclass\MyProject> git commit -m "Committed MyFile to Branch-SignUpPage Branch" 
+[Branch-SignUpPage f6d0494] Committed MyFile to Branch-SignUpPage Branch
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\study\githubclass\gitclass\MyProject> git push origin Branch-SignUpPage    
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 319 bytes | 319.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'Branch-SignUpPage' on GitHub by visiting:     
+remote:      https://github.com/Islam-Khan001/GitLab/pull/new/Branch-SignUpPage  
+remote:
+To https://github.com/Islam-Khan001/GitLab.git
+ * [new branch]      Branch-SignUpPage -> Branch-SignUpPage
+PS C:\study\githubclass\gitclass\MyProject> git checkout main
+Switched to branch 'main'
+PS C:\study\githubclass\gitclass\MyProject> git checkout Branch-LoginPage
+Switched to branch 'Branch-LoginPage'
+PS C:\study\githubclass\gitclass\MyProject> git checkout Branch-SignUpPage
+Switched to branch 'Branch-SignUpPage'
+PS C:\study\githubclass\gitclass\MyProject> git checkout main                    
+Switched to branch 'main'
+PS C:\study\githubclass\gitclass\MyProject> git merge Branch-LoginPage
+Updating 52053a6..6aa64d4
+Fast-forward
+ MyFile.java | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\study\githubclass\gitclass\MyProject> git merge Branch-SignUp   
+merge: Branch-SignUp - not something we can merge
+PS C:\study\githubclass\gitclass\MyProject> git merge Branch-SignUpPage
+Updating 6aa64d4..f6d0494
+Fast-forward
+ MyFile.java | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\study\githubclass\gitclass\MyProject> git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Islam-Khan001/GitLab.git
+   52053a6..f6d0494  main -> main

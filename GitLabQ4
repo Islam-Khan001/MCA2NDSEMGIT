@@ -1,0 +1,13 @@
+To remove a file with sensitive information from a Git repository and GitHub, follow these steps:
+
+1 Identify the File
+2 Create a Backup ofyour repository.
+
+3 Remove the File: Use Git's filter-branch command to remove the file from the commit history.
+ Use this Command = git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch <your file path>' --prune-empty --tag-name-filter cat -- --all
+
+4 Force Push to GitHub: Push the changes to GitHub, overwriting the repository's history
+5 git push origin --force --all
+6 Remove the file from your local repository.
+
+Check GitHub to ensure the sensitive file is removed from the commit history.
